@@ -183,9 +183,7 @@ def applyAdmission():
             print("\nSorry!, you could'nt qualify, better luck next time!")
 
     else:
-        print("Exiting")
-        for i in 3:
-            print(".")
+        print("Exiting...")
         
         
 #####################################################################################
