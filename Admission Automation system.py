@@ -80,14 +80,14 @@ def fillForm(email):
     valid = False
 
     if(uname in registeredUser[0]) and (psswd in registeredUser[1]):
-        print("Welcome " + uname.upper() + ", please provide your other information.")
+        print("\nWelcome " + uname.upper() + ", please provide your other information.")
     
         fullName = input("Full Name: ")
         fatherName =  input("Father Name: ")
         fullName.upper()
         fatherName.upper()
-    
-        print("1- BS(IT) \n2- BS(CS) \n3- BBA \n4- Media Studies")
+
+        print("\nPick a Program \n1- BS(IT) \n2- BS(CS) \n3- BBA \n4- Media Studies")
         program = input("Please make a choice: ")
         if(program == "1"):
             program = "BS(IT)"
@@ -157,7 +157,7 @@ def enteranceTest():
         for i in MCQS:
             print(i)
             choice = input("Option: ")
-            if(choice == mcqAnswers[index]):
+            if(choice.upper() == mcqAnswers[index]):
                 score += 1
             index += 1
         
@@ -169,21 +169,24 @@ def applyAdmission():
     print("\t\t\t\t\tWelcome to XYZ University")
     print("Registration")
     email = register()
-    print("Registration > Fill Admission Form")
+    print("\nRegistration > Fill Admission Form")
     fullName, fatherName, program, intermediate, testDate, testVenue, valid = fillForm(email)
 
     if(valid == True):
-        print("Registration > Fill Admission Form > Verify your Profile")
+        print("\nRegistration > Fill Admission Form > Verify your Profile")
         viewProfile(fullName, fatherName, program, intermediate, testDate, testVenue)
-        print("Registration > Fill Admission Form > Verify your Profile > Entrance Test")
+        print("\nRegistration > Fill Admission Form > Verify your Profile > Entrance Test")
         score = enteranceTest()
         if(score >= 5):
-            print("Hurray!, thanks for consider XYZ University. You can join as quickly as this month!")
+            print("\nHurray!, thanks for consider XYZ University. You can join as quickly as this month!")
         else:
-            print("Sorry!, you could'nt qualify, better luck next time!")
+            print("\nSorry!, you could'nt qualify, better luck next time!")
 
     else:
-        print("Exiting...")
+        print("Exiting")
+        for i in 3:
+            print(".")
+        
         
 #####################################################################################
 ###################################Execution Point###################################
