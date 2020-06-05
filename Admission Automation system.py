@@ -3,6 +3,7 @@
 
 import random
 import time
+from os import system
 
 #kind of data base
 registeredUser = [["admin"], ["admin"], ["admin@gmail.com"]]
@@ -42,8 +43,6 @@ mcqAnswers = ["C", "B", "B", "C", "B", "D"]
 
 #Registers a user
 def register():
-    print("Please provide information to proceed!")
-    
     username = input("Username: ")
     while(username in registeredUser[0]):
         print(username + " already registered!")
@@ -70,23 +69,28 @@ def register():
     
     registeredUser[1].insert(len(registeredUser[1]), password)
     print("Registered successfully!")
+    time.sleep(1)
 
     return email
 
 #Form filling
 def fillForm(email):
+    print("\t\t\tLogin Portal")
     uname = input("Username: ")
     psswd = input("Password: ")
     valid = False
 
     if(uname in registeredUser[0]) and (psswd in registeredUser[1]):
-        print("\nWelcome " + uname.upper() + ", please provide your other information.")
+        system("clear")
+        print("Welcome " + uname.upper() + ", please provide your other information.")
     
-        fullName = input("Full Name: ")
+        fullName = input("\nFull Name: ")
         fatherName =  input("Father Name: ")
         fullName.upper()
         fatherName.upper()
 
+        system("clear")
+        print("Welcome " + fullName.upper() + ", please provide your other information.")
         print("\nPick a Program \n1- BS(IT) \n2- BS(CS) \n3- BBA \n4- Media Studies")
         program = input("Please make a choice: ")
         if(program == "1"):
@@ -107,10 +111,12 @@ def fillForm(email):
 
         isPassed = input("Please enter your overall % in last exam: ")
         while(float(isPassed) > 100):
+            system("clear")
             print("Sorry you typed an invalid percentage!")
             isPassed = input("Please enter your overall % in last exam: ")
         
         if(float(isPassed) < 50.00):
+            system("clear")
             print("Sorry you can't proceed further, you do not meet eligibility criteria!")
 
             #Maintains another list of ineligible users
@@ -126,7 +132,8 @@ def fillForm(email):
             fullName = fatherName = program = intermediate = testDate = testVen = ""
             return fullName, fatherName, program, intermediate, testDate, testVen, valid
         else:
-            print("Operation successful!")
+            print("Form filled successfully!")
+            time.sleep(1)
             day = random.randrange(1,31)
             month = random.randrange(1,12)
             testDate = str(day) + "-" + str(month) + "-2020"
@@ -134,6 +141,7 @@ def fillForm(email):
             valid = True
             return fullName, fatherName, program, intermediate, testDate, venue[testVen], valid
     else:
+        system("clear")
         print("Invalid username or password, make sure you're a registered user!")
         fullName = fatherName = program = intermediate = testDate = testVen = ""
         return fullName, fatherName, program, intermediate, testDate, testVen, valid
@@ -141,48 +149,67 @@ def fillForm(email):
 #Prints user information
 def viewProfile(fullName, fatherName, program, intermediate, testDate, testVenue):
     print("User Information")
-    print("Full Name: " + fullName)
-    print("Father Name: " + fatherName)
-    print("Enrolled Program: " + program)
-    print("Intermediate Degree: " + intermediate)
-    print("Test Date: " + testDate)
-    print("Test Venue: " + testVenue)
+    print("Full Name:\t\t" + fullName)
+    print("Father Name:\t\t" + fatherName)
+    print("Enrolled Program:\t\t" + program)
+    print("Intermediate Degree:\t\t" + intermediate)
+    print("Test Date:\t\t" + testDate)
+    print("Test Venue:\t\t" + testVenue)
 
 def enteranceTest():
     score = 0
     index = 0
-    print("Exam Time: 2 minutes")
+    print("Exam Time: \t\t\t\t\t\t\t2 minutes")
     start = input("Please type 'start' to start exam: ")
     if(start == "start") or (start == "START"):
+        system("clear")
         for i in MCQS:
+            system("clear")
             print(i)
             choice = input("Option: ")
             if(choice.upper() == mcqAnswers[index]):
                 score += 1
             index += 1
-        
-    print("You scored: " + str(score) + "/" + str(len(MCQS)))
+    
+    print("\nYou scored: " + str(score) + "/" + str(len(MCQS)))
+    input("\nPlease enter to continue ")
 
     return score
         
 def applyAdmission():
+    system("clear")
     print("\t\t\t\t\tWelcome to XYZ University")
-    print("Registration")
+    print("Registration, please provide information to proceed!")
     email = register()
-    print("\nRegistration > Fill Admission Form")
+    
+    system("clear")
+    print("-------------------------------------------------------------------------------")
+    print("\t\t\t\tRegistration > Fill Admission Form")
+    print("-------------------------------------------------------------------------------")
     fullName, fatherName, program, intermediate, testDate, testVenue, valid = fillForm(email)
 
     if(valid == True):
-        print("\nRegistration > Fill Admission Form > Verify your Profile")
+        system("clear")
+        print("-------------------------------------------------------------------------------")
+        print("\t\tRegistration > Fill Admission Form > Verify your Profile")
+        print("-------------------------------------------------------------------------------")
         viewProfile(fullName, fatherName, program, intermediate, testDate, testVenue)
-        print("\nRegistration > Fill Admission Form > Verify your Profile > Entrance Test")
+        input("\nPress enter to continue ")
+        
+        system("clear")
+        print("-------------------------------------------------------------------------------")
+        print("   Registration > Fill Admission Form > Verify your Profile > Entrance Test")
+        print("-------------------------------------------------------------------------------")
         score = enteranceTest()
         if(score >= 5):
-            print("\nHurray!, thanks for consider XYZ University. You can join as quickly as this month!")
+            system("clear")
+            print("Hurray!, thanks for consider XYZ University. You can join as quickly as this month!")
         else:
-            print("\nSorry!, you could'nt qualify, better luck next time!")
+            system("clear")
+            print("Sorry!, you could'nt qualify, better luck next time!")
 
     else:
+        system("clear")
         print("Exiting...")
         
         
