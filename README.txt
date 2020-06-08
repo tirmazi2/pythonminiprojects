@@ -1,1 +1,1 @@
-Admission Automation system
+Admission Automation Project
