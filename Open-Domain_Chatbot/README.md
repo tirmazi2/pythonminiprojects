@@ -35,8 +35,8 @@ I am creating this project to apply the skills I learnt while working on the cou
 In order to use this repository to create a chatbot, you first need have [Python 3.5](https://docs.python.org/3.5/) or more and need to install some Python Packages. I suggest you to create a [virtual environment](https://docs.python.org/3/tutorial/venv.html) for this purpose. Run the following commands in your favorite projects directory.
 ```
 cd path/to/your/folder
-git clone https://github.com/manikanthr5/MovieChatbot.git
-cd MovieChatbot
+git clone https://github.com/tirmazi2/pythonminiprojects.git
+cd pythonminiprojects
 virtualenv -p python3.5 env
 source env/bin/activate
 pip install -r requirements.txt
