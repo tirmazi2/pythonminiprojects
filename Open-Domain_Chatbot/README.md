@@ -8,9 +8,6 @@ This repository contains code for a generative type chatbot created using [RNNs]
 - [Installation Steps](#installation-steps)
 - [Data Used](#data-used)
 - [Project Structure](#project-structure)
-- [Model Training](#model-training)
-- [Chat with Bot](#chat-with-bot)
-- [Current Status](#current-status)
 - [Future Prospects](#future-prospects)
 
 ## Introduction
@@ -54,5 +51,3 @@ The project is divided into **3** parts.
   <li>Chat with Bot</li>
   <li>Current Status</li>
 </ul>
-
-## Further Steps
