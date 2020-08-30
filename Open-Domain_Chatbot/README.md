@@ -54,4 +54,5 @@ The project is divided into **3** parts.
   <li>Chat with Bot</li>
   <li>Current Status</li>
 </ul>
+
 ## Further Steps
