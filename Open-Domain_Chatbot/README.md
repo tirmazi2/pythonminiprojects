@@ -49,11 +49,9 @@ I am using [Cornell Movie Dialogs Corpus](https://www.cs.cornell.edu/~cristian/C
 
 ## Project Structure
 The project is divided into **3** parts.
-
-## Model Training
-
-## Chat with Bot
-
-## Current Status
-
+<ul>
+  <li>Model Training</li>
+  <li>Chat with Bot</li>
+  <li>Current Status</li>
+</ul>
 ## Further Steps
